@@ -1,0 +1,31 @@
+{
+  "system": "Lettuce Grow Farmstand Smart Controller",
+  "location": {
+    "city": "Palo Alto, CA",
+    "timezone": "America/Los_Angeles",
+    "climate": "Mediterranean Dry Summer / Mild Rainy Winter"
+  },
+  "device": {
+    "model": "Shelly Plug US Gen4 (S4PL-00116US)"
+  },
+  "profiles": {
+    "active_mode": "AUTO (Date-based: Dec-Feb = Winter, Mar-Nov = Summer/Fall)",
+    "summer_fall": {
+      "months": "March to November",
+      "day": "3 min ON / 15 min OFF (07:00 ~ 11:00, 15:00 ~ 21:00)",
+      "peak": "2 min ON / 8 min OFF (11:00 ~ 15:00)",
+      "night": "1 min ON / 45 min OFF (21:00 ~ 07:00)",
+      "purpose": "Prevents root desiccation in dry outdoor weather with midday peak cooling and zero motor heat buildup"
+    },
+    "winter": {
+      "months": "December to February",
+      "day": "3 min ON / 35 min OFF (08:00 ~ 17:00)",
+      "night": "1 min ON / 90 min OFF (17:00 ~ 08:00)",
+      "purpose": "Prevents root rot during rainy winter and protects roots from cold water shock"
+    },
+    "safety": {
+      "max_continuous_run_seconds": 300,
+      "description": "Force turn off if pump runs longer than 5 minutes"
+    }
+  }
+}
